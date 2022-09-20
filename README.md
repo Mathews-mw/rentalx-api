@@ -3,7 +3,7 @@
  > This is an aplication to test an API services
 
 
-	*This is for study purpose only, as always.*
+*This is for study purpose only, as always.*
 
 ***
 ## Some importants points about this project:
