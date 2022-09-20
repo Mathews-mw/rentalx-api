@@ -29,4 +29,4 @@
 
 ***
 
-**That is it! Soon come new updates.**
+**That is it! Soon come new updates. Thanks!**
