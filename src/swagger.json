@@ -1,0 +1,78 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "RentalX API Documentation",
+    "Description": "This is an API Rent. It's for study purposes only",
+    "version": "1.0.0",
+    "contact": {
+      "email": "mathews.mw@gmail.com"
+    }
+  },
+  "paths": {
+    "/categories": {
+      "post": {
+        "tags": ["Category"],
+        "summary": "Create a category",
+        "description": "Create a new category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "Category name sample",
+                  "description": "Category description sample"
+                }
+              }
+            }
+          }
+        },
+        "response": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Category alredy exist"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Category"],
+        "summary": "List all categories",
+        "description": "List all categories",
+        "response": {
+          "200": {
+            "description": "Sucess",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "arrays",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
