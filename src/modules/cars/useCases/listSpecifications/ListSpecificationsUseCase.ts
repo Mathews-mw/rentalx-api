@@ -8,6 +8,7 @@ class ListSpecificationUseCase {
   execute(): Specification[] {
     const specifications = this.specificationsRepository.getEspecifications();
 
+    //@ts-ignore
     return specifications;
   }
 };
