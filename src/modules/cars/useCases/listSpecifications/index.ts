@@ -1,6 +1,6 @@
-import { SpecificationsRepository } from "../../repositories/implementations/SpecificationsRepository";
-import { ListSpecificationsControlle } from "./ListSpecificationsController";
-import { ListSpecificationUseCase } from "./ListSpecificationsUseCase";
+import { ListSpecificationUseCase } from './ListSpecificationsUseCase';
+import { ListSpecificationsControlle } from './ListSpecificationsController';
+import { SpecificationsRepository } from '@modules/cars/infra/typeorm/repositories/SpecificationsRepository';
 
 const specificationsRepository = SpecificationsRepository.getInstance();
 
