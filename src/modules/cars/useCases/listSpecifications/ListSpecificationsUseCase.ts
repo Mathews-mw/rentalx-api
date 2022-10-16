@@ -1,13 +1,18 @@
+import { SpecificationsRepository } from '@modules/cars/infra/typeorm/repositories/SpecificationsRepository';
+import { ISpecificationsRepository } from '@modules/cars/repositories/ISpecificationsRepository';
+import { inject, injectable } from 'tsyringe';
 import { Specification } from '../../infra/typeorm/entities/Specification';
-import { SpecificationsRepository } from '../../repositories/implementations/SpecificationsRepository';
 
+@injectable()
 class ListSpecificationUseCase {
-	constructor(private specificationsRepository: SpecificationsRepository) {}
+	constructor(
+		@inject(SpecificationsRepository)
+		private specificationsRepository: ISpecificationsRepository
+	) {}
 
-	execute(): Specification[] {
-		const specifications = this.specificationsRepository.getEspecifications();
+	async execute(): Promise<Specification[]> {
+		const specifications = await this.specificationsRepository.getEspecifications();
 
-		//@ts-ignore
 		return specifications;
 	}
 }

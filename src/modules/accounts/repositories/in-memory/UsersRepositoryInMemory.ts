@@ -3,7 +3,7 @@ import { User } from '@modules/accounts/infra/typeorm/entities/User';
 import { IUsersRepository } from '../IUsersRepository';
 
 class UsersRepositoryInMemory implements IUsersRepository {
-	userREpository: User[] = [];
+	userRepository: User[] = [];
 
 	async create({ name, email, password, driver_license }: ICreateUserDTO): Promise<void> {
 		const user = new User();
@@ -14,17 +14,21 @@ class UsersRepositoryInMemory implements IUsersRepository {
 			driver_license,
 		});
 
-		this.userREpository.push(user);
+		this.userRepository.push(user);
+	}
+
+	async getAllUsers(): Promise<User[]> {
+		return this.userRepository;
 	}
 
 	async findByEmail(email: string): Promise<User> {
-		const user = this.userREpository.find((user) => user.email === email);
+		const user = this.userRepository.find((user) => user.email === email);
 
 		return user;
 	}
 
 	async findById(id: string): Promise<User> {
-		const user = this.userREpository.find((user) => user.id === id);
+		const user = this.userRepository.find((user) => user.id === id);
 
 		return user;
 	}
