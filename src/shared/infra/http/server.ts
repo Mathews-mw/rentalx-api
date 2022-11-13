@@ -10,7 +10,7 @@ import swaggerFile from '../../../swagger.json';
 
 createConnection('database_rentx');
 
-const app = express();
+export const app = express();
 app.use(express.json());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
