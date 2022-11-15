@@ -2,6 +2,7 @@ import { container } from 'tsyringe';
 
 import { ICarRepository } from '@modules/cars/repositories/ICarRepository';
 import { IDateProvider } from '@shared/providers/DateProvider/IDateProvider';
+import { IMailProvider } from '@shared/providers/MailProvider/IMailProvider';
 import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 import { IRentalsRepository } from '@modules/rentals/repositories/IRentalsRepository';
 import { CarsRepository } from '@modules/cars/infra/typeorm/repositories/CarsRepository';
@@ -15,12 +16,14 @@ import { CategoriesRepository } from '@modules/cars/infra/typeorm/repositories/C
 import { CarsImagesRepository } from '@modules/cars/infra/typeorm/repositories/CarsImagesRepository';
 import { DayjsDateProvider } from '@shared/providers/DateProvider/implementations/DayjsDateProvider';
 import { UsersTokensRepository } from '@modules/accounts/infra/typeorm/repositories/UsersTokensRepository';
+import { EtherealMailProvider } from '@shared/providers/MailProvider/implementations/EtherealMailProvider';
 import { SpecificationsRepository } from '@modules/cars/infra/typeorm/repositories/SpecificationsRepository';
 
 container.registerSingleton<ICarRepository>('CarRepository', CarsRepository);
 container.registerSingleton<IUsersRepository>('UsersRepository', UsersRepository);
 container.registerSingleton<IDateProvider>('DayjsDateProvider', DayjsDateProvider);
 container.registerSingleton<IRentalsRepository>('RentalsRepository', RentalsRepository);
+container.registerInstance<IMailProvider>('EtherealMailProvider', new EtherealMailProvider());
 container.registerSingleton<ICategoriesRepository>('CategoriesRepository', CategoriesRepository);
 container.registerSingleton<ICarsImagesRepository>('CarsImagesRepository', CarsImagesRepository);
 container.registerSingleton<IUsersTokensRepository>('UsersTokensRepository', UsersTokensRepository);
