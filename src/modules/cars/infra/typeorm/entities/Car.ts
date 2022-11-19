@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryColumn } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
+import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryColumn } from 'typeorm';
+
 import { Category } from './Category';
 import { Specification } from './Specification';
 

@@ -4,12 +4,12 @@ import { inject, injectable } from 'tsyringe';
 
 import auth from '@config/auth';
 import { AppError } from '@shared/errors/AppError';
+import { IDateProvider } from '@shared/providers/DateProvider/IDateProvider';
 import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 import { IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
 import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/UsersRepository';
-import { UsersTokensRepository } from '@modules/accounts/infra/typeorm/repositories/UsersTokensRepository';
-import { IDateProvider } from '@shared/providers/DateProvider/IDateProvider';
 import { DayjsDateProvider } from '@shared/providers/DateProvider/implementations/DayjsDateProvider';
+import { UsersTokensRepository } from '@modules/accounts/infra/typeorm/repositories/UsersTokensRepository';
 
 interface IRequest {
 	email: string;

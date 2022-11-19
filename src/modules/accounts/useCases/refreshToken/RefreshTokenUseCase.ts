@@ -1,12 +1,12 @@
+import { verify, sign } from 'jsonwebtoken';
 import { inject, injectable } from 'tsyringe';
 
-import { IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
-import { UsersTokensRepository } from '@modules/accounts/infra/typeorm/repositories/UsersTokensRepository';
-import { verify, sign } from 'jsonwebtoken';
 import auth from '@config/auth';
 import { AppError } from '@shared/errors/AppError';
 import { IDateProvider } from '@shared/providers/DateProvider/IDateProvider';
+import { IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
 import { DayjsDateProvider } from '@shared/providers/DateProvider/implementations/DayjsDateProvider';
+import { UsersTokensRepository } from '@modules/accounts/infra/typeorm/repositories/UsersTokensRepository';
 
 interface IPayload {
 	sub: string;
