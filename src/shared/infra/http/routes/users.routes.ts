@@ -8,7 +8,7 @@ import { ListUsersController } from '@modules/accounts/useCases/listUsers/ListUs
 
 const usersRoutes = Router();
 
-const uploadAvatar = multer(uploadConfig.upload('./tmp/avatar'));
+const uploadAvatar = multer(uploadConfig);
 
 const createUserController = new CreateUserController();
 const listUsersController = new ListUsersController();

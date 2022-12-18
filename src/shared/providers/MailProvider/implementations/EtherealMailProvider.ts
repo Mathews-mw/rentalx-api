@@ -33,6 +33,8 @@ class EtherealMailProvider implements IMailProvider {
 
 		const templateHTML = templateParse(variables); // Por fim, handlebars vai pegar essa compilação e ler as variáveis contidas para gerar o HTML
 
+		console.log('client: ', this.client);
+
 		const message = await this.client.sendMail({
 			to,
 			from: 'Rentx <noreply@rentx.com.br',

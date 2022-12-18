@@ -15,14 +15,14 @@ import { UsersTokensRepository } from '@modules/accounts/infra/typeorm/repositor
 @injectable()
 class ForgottenPasswordUseCase {
 	constructor(
-		@inject(UsersRepository)
-		private userRepository: IUsersRepository,
-		@inject(UsersTokensRepository)
-		private usersTokensRepository: IUsersTokensRepository,
 		@inject(DayjsDateProvider)
 		private dateProvider: IDateProvider,
 		@inject(EtherealMailProvider)
-		private mailProvider: IMailProvider
+		private mailProvider: IMailProvider,
+		@inject(UsersRepository)
+		private userRepository: IUsersRepository,
+		@inject(UsersTokensRepository)
+		private usersTokensRepository: IUsersTokensRepository
 	) {}
 
 	async execute(email: string): Promise<void> {

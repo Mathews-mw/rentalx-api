@@ -20,7 +20,7 @@ interface IResponse {
 	token: string;
 	user: {
 		name: string;
-		password: string;
+		email: string;
 	};
 	refresh_token: string;
 }
@@ -72,7 +72,7 @@ class AuthenticateUserUseCase {
 			token: token,
 			user: {
 				name: user.name,
-				password: user.password,
+				email: user.email,
 			},
 			refresh_token,
 		};
