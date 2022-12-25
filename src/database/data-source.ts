@@ -23,9 +23,8 @@ const AppDataSource = new DataSource({
 	subscribers: [],
 });
 
-export function createConnection(host = 'database'): Promise<DataSource> {
+export function createConnection(): Promise<DataSource> {
 	return AppDataSource.setOptions({
-		host: process.env.NODE_ENV === 'supertest' ? 'localhost' : host,
 		database: process.env.NODE_ENV === 'supertest' ? 'rentx_supertest' : 'rentx',
 	}).initialize();
 }
