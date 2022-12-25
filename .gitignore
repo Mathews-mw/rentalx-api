@@ -1,5 +1,8 @@
 node_modules
 .vscode
+dist
 
-tmp
+tmp/*
+!tmp/.gitkeep
+.env
 notes.md

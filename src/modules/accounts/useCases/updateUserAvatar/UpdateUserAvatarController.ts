@@ -9,10 +9,14 @@ class UpdateUserAvatarController {
 		const avatar_file = request.file.filename;
 
 		const updateUserAvatarUseCase = container.resolve(UpdateUserAvatarUseCase);
+		try {
+			await updateUserAvatarUseCase.execute({ user_id: id, avatar_file });
 
-		await updateUserAvatarUseCase.execute({ user_id: id, avatar_file });
-
-		return response.status(204).send();
+			return response.status(204).send();
+		} catch (error) {
+			console.log(error);
+			return response.status(400).json({ error: 'Erro ao tentar adicionar imagem' });
+		}
 	}
 }
 
