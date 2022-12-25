@@ -1,8 +1,6 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
-
 import 'reflect-metadata';
-// import 'dotenv/config';
+import 'dotenv/config';
+
 import express, { Request, Response, NextFunction } from 'express';
 import 'express-async-errors';
 import swaggerUi from 'swagger-ui-express';
@@ -13,7 +11,7 @@ import { router } from './routes';
 import swaggerFile from '../../../swagger.json';
 import upload from '@config/upload';
 
-createConnection('database_rentx');
+createConnection();
 
 export const app = express();
 app.use(express.json());

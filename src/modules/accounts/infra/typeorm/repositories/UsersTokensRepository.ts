@@ -1,5 +1,5 @@
 import { Repository } from 'typeorm';
-import AppDataSource from 'database/data-source';
+import AppDataSource from '../../../../../database/data-source';
 
 import { UserTokens } from '../entities/UserTokens';
 import { ICreateUserTokenDTO, IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
